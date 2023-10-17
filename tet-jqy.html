@@ -8,7 +8,7 @@
 
 		<link href="styles/normalize.css" rel="stylesheet">
 		<link href="styles/main.css" rel="stylesheet">
-		<script src="jquery-3.6.4.min.js"></script>
+		<script src="scripts/jquery-8.7.1.min.js"></script>
 		<script src="scripts/animations.js"></script>
 	</head>
 
@@ -35,12 +35,12 @@
 				</div>
 
 				<div class="audio-player-container">
-					<audio class="music">
-						<source src="audio/TET%20-%20Jiang%20Qiu%20Yue.wav" />
+					<audio id="music">
+						<source src="audio/TET%20-%20Jiang%20Qiu%20Yue.wav" type="audio/wav"/>
 					</audio>
 
-					<button class="play-icon">
-						<img src="images/play%20icon%20white.svg" height="50" alt="play icon" />
+					<button id="audio-icon">
+						<img id="play-icon" src="images/play%20icon%20white.svg" height="50" alt="play icon" />
 					</button>
 				</div>
 			</div>
