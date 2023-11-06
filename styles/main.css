@@ -66,7 +66,7 @@ header {
 }*/
 
 #logo {
-	/* width: 28% */
+	width: 28%;
 	max-height: 75%;
 	vertical-align: middle;
 }
@@ -79,12 +79,9 @@ h1 {
 }
 
 h1#title {
-	display: inline-block;
 	vertical-align: middle;
-	/*padding: 0 0 0 50px;
-	font-size: 80px;*/
-	font-size: 15%;
-	padding: 20% 0 30% 25%;
+	padding: 0 0 0 15%;
+	font-size: 10vh;
 	color: #966b20;
 	line-height: 1.15;
 }
@@ -374,6 +371,19 @@ button {
 /* MEDIA QUERIES */
 /* smartphone */
 @media (max-width: 767px) {
+	#preface {
+		width: 50%;
+	}
+
+	#logo {
+		width: 33%;
+	}
+
+	h1#title {
+		padding: 20% 0 30% 25%;
+		font-size: 2.3em;
+	}
+
 	nav ul li {
 		font-size: 16px;
 	}
@@ -398,9 +408,20 @@ button {
 }
 
 /* tablet */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1199px) {
 	#preface {
+		width: 50%;
 	}
+
+	#logo {
+		width: 33%;
+	}
+
+	h1#title {
+		padding: 20% 0 30% 25%;
+		font-size: 7.5vh;
+	}
+
 
 	#intro {
 		background-size: contain;
