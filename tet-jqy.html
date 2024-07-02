@@ -49,13 +49,19 @@
 				</div>
 
 				<div class="audio-player-container">
-					<audio id="music">
+					<audio class="music">
 						<source src="audio/TET%20-%20Jiang%20Qiu%20Yue.wav" type="audio/wav"/>
 					</audio>
 
-					<button id="audio-icon">
-						<img id="play-icon" src="images/play%20icon%20white.svg" height="50" alt="play icon" />
+					<button class="audio-icon">
+						<img class="play-icon" src="images/play%20icon%20white.svg" height="50" alt="play icon" />
 					</button>
+
+					<span class="time current-time">0:00</span>
+					<input class="seek-slider" type="range" max="100" value="0" />
+					<span class="time duration">0:00</span>
+					
+					<input class="volume-slider" type="range" max="100" value="50" />
 				</div>
 			</div>
 		</main>

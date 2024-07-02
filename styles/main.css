@@ -213,13 +213,15 @@ p {
 .nav-menu {
 	display: none;
 	position: absolute;
+	top: 100%;
 	right: 0px;
-	width: 40%;
+	padding: 0;
 	z-index: 20;
 }
 
 .nav-menu ul li {
 	display: block;
+	padding: 5px 40px;
 }
 
 .nav-menu ul li a {
@@ -385,6 +387,8 @@ button {
 
 .audio-player-container {
 	box-sizing: border-box;
+	display: flex;
+	align-items: center;
 	width: 50%;
 	margin: 0 25%;
 	padding: 1%;
@@ -413,6 +417,11 @@ button {
 .audio-icon {
 	width: 50px;
 	height: 50px;
+}
+
+.time {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 12px;
 }
 
 
