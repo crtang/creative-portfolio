@@ -458,18 +458,18 @@ button {
 
 	.nav-logo {
 		width: 100%;
-		height: 15vh;
-		padding-top: 0;
+		height: 10vh;
+		padding: 10px 0;
 	}
 
 	.pages-nav {
-		display: flex;
-		flex-flow: row nowrap;
-		margin: initial;
+		display: none;
+		/* flex-flow: row nowrap;
+		margin: initial; */
 	}
 
 	.nav-links {
-		min-width: 350px;
+		min-width: 200px;
 	}
 }
 
