@@ -111,6 +111,9 @@ nav {
 }
 
 a {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 	color: #ab7a1c;
 	text-decoration: none;
 }
@@ -320,7 +323,6 @@ div#tet {
 	height: 100vh;
 	margin: 0 auto;
 	padding: 1% 0;
-	border-bottom: 1px solid #ffffff;
 	background-color: #28292a;
 }
 
@@ -363,16 +365,30 @@ div#tet #bg-border-bottom {
 div#lof {
 	box-sizing: border-box;
 	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
 	margin: 0 auto;
 	padding: 10% 0;
 	text-align: center;
+	background: url('../images/lihu%20boulevard%20jiangsu%20kuaileqie.jpg') no-repeat center center;
+	background-size: cover;
 }
 
 div#lof h2,
 div#lof h3 {
 	margin: 0 auto;
-	padding: 35px;
-	color: #000000;
+	color: #ffffff;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+div#lof h2 {
+	padding: 5% 5% 2.5% 5%;
+}
+
+div#lof h3 {
+	padding: 2.5% 5% 5% 5%;
 }
 
 
