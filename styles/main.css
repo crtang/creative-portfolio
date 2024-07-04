@@ -430,6 +430,22 @@ button {
 	z-index: 10;
 }
 
+#lof-music {
+	width: 50%;
+	box-sizing: border-box;
+	position: relative;
+	margin: 0 25%;
+	padding: 20%;
+	background: url('../images/lihu%20boulevard%20jiangsu%20kuaileqie.jpg') no-repeat center;
+	background-size: cover;
+	font-family: 'Alegreya-SC', serif;
+	font-size: 48px;
+	color: #ffffff;
+	letter-spacing: 5px;
+	text-align: center;
+	z-index: 10;
+}
+
 .audio-icon {
 	width: 50px;
 	height: 50px;
