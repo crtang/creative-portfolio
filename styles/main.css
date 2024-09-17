@@ -159,8 +159,9 @@ nav ul li {
 #tagline {
 	box-sizing: border-box;
 	width: auto;
-	padding: 2%;
+	padding: 2% 5%;
 	background: var(--color-2);
+	font-size: 5vh;
 	text-align: center;
 }
 
@@ -539,6 +540,10 @@ button {
 	#intro {
 		background-size: contain;
 		padding: 10%;
+	}
+
+	#tagline {
+		width: 50%;
 	}
 
 	.pages-header {
