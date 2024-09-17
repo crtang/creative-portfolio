@@ -19,6 +19,12 @@
 * {
 	margin: 0;
 	padding: 0;
+	--color-1: #000000;
+	--color-2: #ffffff;
+	--color-3: #966b20;
+	--color-4: #ab7a1c;
+	--color-5: #28292a;
+	--color-6: #828282;
 }
 
 
@@ -47,7 +53,7 @@ header {
 	width: 100%;
 	height: 100vh;
 	padding: 0 5%;
-	background-color: #000000;
+	background-color: var(--color-1);
 }
 
 #preface {
@@ -83,7 +89,7 @@ h1 {
 h1#title {
 	vertical-align: middle;
 	font-size: 10vh;
-	color: #966b20;
+	color: var(--color-3);
 	line-height: 1.15;
 }
 
@@ -107,7 +113,7 @@ h4 {
 
 nav {
 	padding: 35px;
-	background: #000000;
+	background: var(--color-1);
 }
 
 a {
@@ -119,7 +125,7 @@ a {
 }
 
 nav a:hover {
-	color: #ffffff;
+	color: var(--color-2);
 }
 
 a:hover {
@@ -154,7 +160,7 @@ nav ul li {
 	box-sizing: border-box;
 	width: auto;
 	padding: 2%;
-	background: #ffffff;
+	background: var(--color-2);
 	text-align: center;
 }
 
@@ -176,7 +182,7 @@ p {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background: #000000;
+	background: var(--color-1);
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
 	z-index: 20;
 }
@@ -228,12 +234,12 @@ p {
 }
 
 .nav-menu ul li a {
-	color: #ffffff;
+	color: var(--color-2);
 	text-decoration: none;
 }
 
 .nav-menu ul li:hover {
-	background-color: #ab7a1c;
+	background-color: var(--color-4);
 	font-weight: bold;
 }
 
@@ -266,8 +272,8 @@ p {
 footer {
 	box-sizing: border-box;
 	padding: 5% 10% 10%;
-	background: #000000;
-	color: #828282;
+	background: var(--color-1);
+	color: var(--color-6);
 	text-align: center;
 }
 
@@ -306,7 +312,7 @@ div#longing {
 	height: 100vh;
 	background: url('../images/ocean%20sunset%20sebastien%20gabriel.jpeg') no-repeat center center;
 	background-size: cover;
-	color: #ffffff;
+	color: var(--color-2);
 	text-align: center;
 	vertical-align: middle;
 }
@@ -323,7 +329,7 @@ div#tet {
 	height: 100vh;
 	margin: 0 auto;
 	padding: 1% 0;
-	background-color: #28292a;
+	background-color: var(--color-5);
 }
 
 div#tet #bg-border-top {
@@ -344,7 +350,7 @@ div#tet h2 {
 	background: url('../images/bamboo.svg') no-repeat center;
 	font-family: 'Alegreya-SC', serif;
 	font-size: 5vh;
-	color: #ffffff;
+	color: var(--color-2);
 	letter-spacing: 5px;
 	text-align: center;
 	z-index: 10;
@@ -379,7 +385,7 @@ div#lof {
 div#lof h2,
 div#lof h3 {
 	margin: 0 auto;
-	color: #ffffff;
+	color: var(--color-2);
 	background: rgba(0, 0, 0, 0.2);
 }
 
@@ -404,15 +410,69 @@ button {
 .audio-player-container {
 	box-sizing: border-box;
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	width: 50%;
 	margin: 0 25%;
 	padding: 1%;
-	background: #ab7a1c;
+	background: var(--color-4);
 }
 
+.controls > * {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.current, .length {
+	color: var(--color-2);
+}
+
+.timeline {
+	position: relative;
+	width: 100%;
+	background: var(--color-3);
+	cursor: pointer;
+}
+
+.timeline .progress {
+	width: 0%;
+	height: 100%;
+	background: var(--color-2);
+	transition: 0.25s;
+}
+
+.volume-container .volume-button {
+	display: flex;
+	align-items: center;
+}
+
+.volume-slider {
+	position: absolute;
+	top: 15px;
+	left: -3px;
+	width: 0;
+	height: 15px;
+	background: var(--color-4);
+	transition: 0.25s;
+	z-index: -1;
+}
+
+.volume-slider:hover {
+	width: 120px;
+	left: -123px;
+}
+
+.volume-percentage {
+	width: 75%;
+	height: 100%;
+	background: var(--color-3);
+}
+
+
+/* MUSIC PLAYER PAGES */
 .song_cover#jqy {
-	background-color: #28292a;
+	background-color: var(--color-5);
 }
 
 #jqy {
@@ -424,7 +484,7 @@ button {
 	background: url('../images/bamboo.svg') no-repeat center;
 	font-family: 'Alegreya-SC', serif;
 	font-size: 48px;
-	color: #ffffff;
+	color: var(--color-2);
 	letter-spacing: 5px;
 	text-align: center;
 	z-index: 10;
@@ -440,7 +500,7 @@ button {
 	background-size: cover;
 	font-family: 'Alegreya-SC', serif;
 	font-size: 48px;
-	color: #ffffff;
+	color: var(--color-2);
 	letter-spacing: 5px;
 	text-align: center;
 	z-index: 10;
