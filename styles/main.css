@@ -225,11 +225,16 @@ p {
 	top: 100%;
 	right: 0px;
 	padding: 0;
+	box-shadow: 0 3px 3px 2px rgba(0, 0, 0, 0.3);
 	z-index: 20;
 }
 
 .nav-menu ul li {
-	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 50px;
+	margin: 0;
 	padding: 5px 40px;
 }
 
