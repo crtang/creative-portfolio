@@ -256,6 +256,7 @@ p {
 .container {
 	box-sizing: border-box;
 	width: 100%;
+	height: auto;
 	padding: 15% 10% 10%;
 }
 
@@ -407,10 +408,13 @@ div#lof h3 {
 
 /* MUSIC PLAYER */
 .mobile-height {
-	height: 100vh;
+	min-height: 100vh;
 }
 
 .song-and-player {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
 	padding-top: 5vh;
 }
 
@@ -496,7 +500,6 @@ button {
 	width: 75vw;
 	height: 75vw;
 	margin: 0 5%;
-	padding: 7.5%;
 	background: url('../images/bamboo.svg') no-repeat center;
 	font-family: 'Alegreya-SC', serif;
 	font-size: 48px;
@@ -584,6 +587,13 @@ button {
 	.nav-links {
 		min-width: 200px;
 	}
+
+	#jqy, #lof-music {
+		width: 50vh;
+		height: 50vh;
+		margin: 0 25%;
+		padding: 20%;
+	}
 }
 
 /* desktop */
@@ -667,7 +677,10 @@ button {
 		font-size: 7.5vh;
 	}
 
-	#jqy {
+	#jqy, #lof-music {
+		width: 50vh;
+		height: 50vh;
+		margin: 0 25%;
 		padding: 20%;
 	}
 }
