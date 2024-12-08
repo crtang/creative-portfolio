@@ -254,8 +254,8 @@ p {
 }
 
 .container {
-	width: 100%;
 	box-sizing: border-box;
+	width: 100%;
 	padding: 15% 10% 10%;
 }
 
@@ -406,6 +406,14 @@ div#lof h3 {
 
 
 /* MUSIC PLAYER */
+.mobile-height {
+	height: 100vh;
+}
+
+.song-and-player {
+	padding-top: 5vh;
+}
+
 button {
 	padding: 0;
 	border: 0;
@@ -418,8 +426,9 @@ button {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 50%;
-	margin: 0 25%;
+	width: 75vw;
+	height: 25vw;
+	margin: 0 5%;
 	padding: 1%;
 	background: var(--color-4);
 }
@@ -477,16 +486,17 @@ button {
 
 
 /* MUSIC PLAYER PAGES */
-.song_cover#jqy {
+.song-cover#jqy {
 	background-color: var(--color-5);
 }
 
 #jqy {
-	width: 50%;
 	box-sizing: border-box;
 	position: relative;
-	margin: 0 25%;
-	padding: 20%;
+	width: 75vw;
+	height: 75vw;
+	margin: 0 5%;
+	padding: 7.5%;
 	background: url('../images/bamboo.svg') no-repeat center;
 	font-family: 'Alegreya-SC', serif;
 	font-size: 48px;
@@ -497,11 +507,12 @@ button {
 }
 
 #lof-music {
-	width: 50%;
 	box-sizing: border-box;
 	position: relative;
-	margin: 0 25%;
-	padding: 20%;
+	width: 75vw;
+	height: 75vw;
+	margin: 0 5%;
+	padding: 7.5%;
 	background: url('../images/lihu%20boulevard%20jiangsu%20kuaileqie.jpg') no-repeat center;
 	background-size: cover;
 	font-family: 'Alegreya-SC', serif;
@@ -654,6 +665,10 @@ button {
 	div#tet h2 {
 		padding: 7.5% 0;
 		font-size: 7.5vh;
+	}
+
+	#jqy {
+		padding: 20%;
 	}
 }
 
