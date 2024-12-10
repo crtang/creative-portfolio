@@ -312,7 +312,7 @@ footer p {
 	align-items: center;
 }
 
-div#longing {
+div#longing-m {
 	box-sizing: border-box;
 	position: relative;
 	width: 100%;
@@ -324,12 +324,12 @@ div#longing {
 	vertical-align: middle;
 }
 
-div#longing h2 {
+div#longing-m h2 {
 	padding: 5%;
 	background: rgba(0, 0, 0, 0.2);
 }
 
-div#tet {
+div#tet-jqy-m {
 	box-sizing: border-box;
 	position: relative;
 	width: 100%;
@@ -339,7 +339,7 @@ div#tet {
 	background-color: var(--color-5);
 }
 
-div#tet #bg-border-top {
+div#tet-jqy-m #bg-border-top {
 	box-sizing: border-box;
 	position: absolute;
 	top: 0;
@@ -350,7 +350,7 @@ div#tet #bg-border-top {
 	z-index: 0;
 }
 
-div#tet h2 {
+div#tet-jqy-m h2 {
 	box-sizing: border-box;
 	position: relative;
 	padding: 7.5% 20%;
@@ -363,7 +363,7 @@ div#tet h2 {
 	z-index: 10;
 }
 
-div#tet #bg-border-bottom {
+div#tet-jqy-m #bg-border-bottom {
 	box-sizing: border-box;
 	position: absolute;
 	bottom: 0;
@@ -375,7 +375,7 @@ div#tet #bg-border-bottom {
 	z-index: 0;
 }
 
-div#lof {
+div#lof-m {
 	box-sizing: border-box;
 	position: relative;
 	width: 100%;
@@ -389,18 +389,18 @@ div#lof {
 	background-size: cover;
 }
 
-div#lof h2,
-div#lof h3 {
+div#lof-m h2,
+div#lof-m h3 {
 	margin: 0 auto;
 	color: var(--color-2);
 	background: rgba(0, 0, 0, 0.2);
 }
 
-div#lof h2 {
+div#lof-m h2 {
 	padding: 5% 5% 2.5% 5%;
 }
 
-div#lof h3 {
+div#lof-m h3 {
 	padding: 2.5% 5% 5% 5%;
 }
 
@@ -490,40 +490,39 @@ button {
 
 
 /* MUSIC PLAYER PAGES */
+.song-cover {
+	box-sizing: border-box;
+	position: relative;
+	width: 75vw;
+	height: 75vw;
+	margin: 0 5%;
+	font-family: 'Alegreya-SC', serif;
+	font-size: 48px;
+	letter-spacing: 5px;
+	text-align: center;
+	z-index: 10;
+}
+
 .song-cover#jqy {
 	background-color: var(--color-5);
 }
 
 #jqy {
-	box-sizing: border-box;
-	position: relative;
-	width: 75vw;
-	height: 75vw;
-	margin: 0 5%;
 	background: url('../images/bamboo.svg') no-repeat center;
-	font-family: 'Alegreya-SC', serif;
-	font-size: 48px;
 	color: var(--color-2);
-	letter-spacing: 5px;
-	text-align: center;
-	z-index: 10;
 }
 
-#lof-music {
-	box-sizing: border-box;
-	position: relative;
-	width: 75vw;
-	height: 75vw;
-	margin: 0 5%;
+#lof {
 	padding: 7.5%;
 	background: url('../images/lihu%20boulevard%20jiangsu%20kuaileqie.jpg') no-repeat center;
 	background-size: cover;
-	font-family: 'Alegreya-SC', serif;
-	font-size: 48px;
 	color: var(--color-2);
-	letter-spacing: 5px;
-	text-align: center;
-	z-index: 10;
+}
+
+#longing {
+	padding: 7.5%;
+	background: url('../images/ocean\ sunset\ sebastien\ gabriel.jpeg') no-repeat center;
+	background-size: cover;
 }
 
 .audio-icon {
@@ -588,7 +587,7 @@ button {
 		min-width: 200px;
 	}
 
-	#jqy, #lof-music {
+	#jqy, #lof {
 		width: 50vh;
 		height: 50vh;
 		margin: 0 25%;
@@ -684,7 +683,7 @@ button {
 		font-size: 7.5vh;
 	}
 
-	#jqy, #lof-music {
+	#jqy, #lof, #longing {
 		width: 50vh;
 		height: 50vh;
 		margin: 0 25%;
