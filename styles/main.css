@@ -594,6 +594,13 @@ button {
 		margin: 0 25%;
 		padding: 20%;
 	}
+
+	.audio-player-container {
+		width: 50vh;
+		height: auto;
+		margin: 0 25%;
+		padding: 1%;
+	}
 }
 
 /* desktop */
@@ -682,6 +689,13 @@ button {
 		height: 50vh;
 		margin: 0 25%;
 		padding: 20%;
+	}
+
+	.audio-player-container {
+		width: 50vh;
+		height: auto;
+		margin: 0 25%;
+		padding: 1%;
 	}
 }
 
