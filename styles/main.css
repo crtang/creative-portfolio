@@ -579,18 +579,19 @@ button {
 
 	.pages-nav {
 		display: none;
-		/* flex-flow: row nowrap;
-		margin: initial; */
 	}
 
 	.nav-links {
 		min-width: 200px;
 	}
 
-	#jqy, #lof {
+	.song-cover {
 		width: 50vh;
 		height: 50vh;
 		margin: 0 25%;
+	}
+
+	#jqy, #lof {
 		padding: 20%;
 	}
 
@@ -691,7 +692,7 @@ button {
 	}
 
 	.audio-player-container {
-		width: 40%;
+		width: 50vh;
 		height: fit-content;
 		margin: 0 25%;
 		padding: 1%;
