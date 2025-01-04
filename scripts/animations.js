@@ -7,6 +7,22 @@ $(document).ready(function() {
 	let volume_button = $('.volume-icon');
 	let progress_bar = $('.progress').get(0);
 
+	function checkStartAndEnd() {
+		if (audio.ended) {
+			console.log("audio finished");
+			/*play_button.attr('src', 'images/play%20icon%20white.svg');*/
+			audio.load();
+		} /*else if (audio.started) {
+			// update audio time elapsed
+			setInterval(() => {
+				console.log(progress_bar);
+
+				progress_bar.style.width = audio.currentTime / audio.duration * 100 + '%';
+				$(".current").textContent = getDuration(audio.currentTime);
+			}, 500);
+		}*/
+	}
+
 	// get duration of audio
 	function getDuration(num) {
 		let seconds = parseInt(num);
@@ -19,23 +35,13 @@ $(document).ready(function() {
 
 	// play or pause/stop audio
 	function toggle_audio() {
-		if (!composition.get(0).paused) {
-			composition.get(0).pause();
+		if (!audio.paused || audio) {
+			audio.pause();
 			play_button.attr('src', 'images/play%20icon%20white.svg');
-		} else if (!composition.get(0).started) {
-			composition.get(0).play();
+		} else if (!audio.started) {
+			audio.play();
 			play_button.attr('src', 'images/pause%20icon%20white.svg');
 		}
-	}
-
-	if (composition.get(0).started) {
-		// update audio time elapsed
-		setInterval(() => {
-			console.log(progress_bar);
-
-			progress_bar.style.width = audio.currentTime / audio.duration * 100 + '%';
-			$(".current").textContent = getDuration(audio.currentTime);
-		}, 500);
 	}
 
 	// get duration of composition
