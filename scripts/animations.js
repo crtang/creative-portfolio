@@ -1,27 +1,10 @@
 $(document).ready(function() {
 	let composition = $('.music');
-	let audio = composition;
+	let audio = composition.get(0);
 	let play_button = $('.play-icon');
 	let timeline = $('.timeline');
 	let volume_slider = $('.volume-slider');
 	let volume_button = $('.volume-icon');
-	let progress_bar = $('.progress').get(0);
-
-	function checkStartAndEnd() {
-		if (audio.ended) {
-			console.log("audio finished");
-			/*play_button.attr('src', 'images/play%20icon%20white.svg');*/
-			audio.load();
-		} /*else if (audio.started) {
-			// update audio time elapsed
-			setInterval(() => {
-				console.log(progress_bar);
-
-				progress_bar.style.width = audio.currentTime / audio.duration * 100 + '%';
-				$(".current").textContent = getDuration(audio.currentTime);
-			}, 500);
-		}*/
-	}
 
 	// get duration of audio
 	function getDuration(num) {
@@ -35,7 +18,7 @@ $(document).ready(function() {
 
 	// play or pause/stop audio
 	function toggle_audio() {
-		if (!audio.paused || audio) {
+		if (!audio.paused) {
 			audio.pause();
 			play_button.attr('src', 'images/play%20icon%20white.svg');
 		} else if (!audio.started) {
