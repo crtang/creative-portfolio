@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	let composition = $('.music');
-	let audio = composition.get(0);
+	let audio = composition;
 	let play_button = $('.play-icon');
 	let timeline = $('.timeline');
 	let volume_slider = $('.volume-slider');
