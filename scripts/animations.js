@@ -29,7 +29,7 @@ $(document).ready(function() {
 
 	// get duration of composition
 	audio.addEventListener("loadeddata", () => {
-		$(".length").textContent = getDuration(audio.duration);
+		$(".timeline").textContent = getDuration(audio.duration);
 		
 		audio.volume = .75;
 	}, false);
@@ -50,6 +50,13 @@ $(document).ready(function() {
 		audio.volume = new_volume;
 		$(".controls .volume-percentage").style.width = new_volume * 100 + '%';
 	}
+
+	/*setInterval(() => {
+		const progress_bar = audio.querySelector(".progress");
+
+		progress_bar.style.width = audio.currentTime / audio.duration * 100 + "%";
+		audio.querySelector(".time .current").textContent = getTimeCodeFromNum(audio.currentTime);
+	}, 500);*/
 
 	// mute volume or turn up volume
 	function toggle_sound() {

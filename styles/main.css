@@ -419,6 +419,7 @@ div#lof-m h3 {
 }
 
 button {
+	display: flex;
 	padding: 0;
 	border: 0;
 	background: transparent;
@@ -427,7 +428,9 @@ button {
 
 .audio-player-container {
 	box-sizing: border-box;
-	display: flex;
+	display: grid;
+	grid-template-rows: 100%;
+	grid-template-columns: 15% 70% 15%;
 	justify-content: space-between;
 	align-items: center;
 	width: 75vw;
@@ -437,19 +440,22 @@ button {
 	background: var(--color-4);
 }
 
-.controls > * {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.audio-icon {
+	margin-right: 5%;
 }
 
-.current, .length {
+.audio-icon, .volume-button {
+	width: fit-content;
+}
+
+.current, .timeline {
 	color: var(--color-2);
 }
 
 .timeline {
 	position: relative;
 	width: 100%;
+	height: 20%;
 	background: var(--color-3);
 	cursor: pointer;
 }
@@ -462,7 +468,6 @@ button {
 }
 
 .volume-container .volume-button {
-	display: flex;
 	align-items: center;
 }
 
@@ -523,11 +528,6 @@ button {
 	padding: 7.5%;
 	background: url('../images/ocean\ sunset\ sebastien\ gabriel.jpeg') no-repeat center;
 	background-size: cover;
-}
-
-.audio-icon {
-	width: 50px;
-	height: 50px;
 }
 
 .time {
