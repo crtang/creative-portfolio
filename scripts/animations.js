@@ -30,6 +30,21 @@ $(document).ready(function() {
 		}
 	};
 
+	// get duration of song
+	function getDuration() {
+		let mins = Math.floor(audio.duration / 60);
+		let secs = Math.floor(audio.duration % 60);
+
+		let minutes = `${mins < 10 ? `0${mins}` : `${mins}`}`;
+		let seconds = `${secs < 10 ? `0${secs}` : `${secs}`}`;
+
+		return `${minutes}:${seconds}`;
+	}
+
+
+
+	// function calls
+	time.text(getDuration());
 	playButton.click(function() {
 		toggleAudio();
 	});
