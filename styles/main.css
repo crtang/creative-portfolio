@@ -467,6 +467,16 @@ button {
 	transition: 0.25s;
 }
 
+.current, .divider, .length {
+	display: inline;
+	font-family: "Montserrat", sans-serif;
+	font-size: .75em;
+}
+
+.divider {
+	width: fit-content;
+}
+
 .volume-container .volume-button {
 	align-items: center;
 }

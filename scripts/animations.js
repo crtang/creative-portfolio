@@ -1,45 +1,43 @@
-$(document).ready(function() {
+$(function() {
 	let composition = $('.music');
 	let audio = composition.get(0);
 	let play_button = $('.play-icon');
 	let timeline = $('.timeline');
+	let time = $('.length');
+	let elapsed = $('.current');
 	let volume_slider = $('.volume-slider');
 	let volume_button = $('.volume-icon');
 
+	audio.loop = false;
+
 	// get duration of audio
-	function getDuration(num) {
-		let seconds = parseInt(num);
-		let minutes = seconds % 60;
+	function get_duration(num) {
+		let minutes = Math.floor(num / 60);
+		let secs = Math.floor(num % 60);
+		let seconds = secs < 10 ? `0${secs}` : `${secs}`;
 
-		seconds -= minutes * 60;
-
-		return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
+		return `${minutes}:${seconds}`;
 	}
+
+	// display duration of audio
+	function display_duration () {
+		time.text(get_duration(audio.duration));
+	}
+
+
+	audio.onloadedmetadata = function() {
+		display_duration();
+	};
 
 	// play or pause/stop audio
 	function toggle_audio() {
-		if (!audio.paused) {
+		if (!audio.paused || audio.ended) {
 			audio.pause();
 			play_button.attr('src', 'images/play%20icon%20white.svg');
 		} else if (!audio.started) {
 			audio.play();
 			play_button.attr('src', 'images/pause%20icon%20white.svg');
 		}
-	}
-
-	// get duration of composition
-	audio.addEventListener("loadeddata", () => {
-		$(".timeline").textContent = getDuration(audio.duration);
-		
-		audio.volume = .75;
-	}, false);
-
-	// click on timeline to skip around
-	function skip_time(e) {
-		let timeline_width = window.getComputedStyle(timeline).width;
-		let time_to_seek = e.offsetX / parseInt(timeline_width) * audio.duration;
-
-		audio.currentTime = time_to_seek;
 	}
 
 	// click volume slider to change volume
@@ -50,13 +48,6 @@ $(document).ready(function() {
 		audio.volume = new_volume;
 		$(".controls .volume-percentage").style.width = new_volume * 100 + '%';
 	}
-
-	/*setInterval(() => {
-		const progress_bar = audio.querySelector(".progress");
-
-		progress_bar.style.width = audio.currentTime / audio.duration * 100 + "%";
-		audio.querySelector(".time .current").textContent = getTimeCodeFromNum(audio.currentTime);
-	}, 500);*/
 
 	// mute volume or turn up volume
 	function toggle_sound() {
@@ -69,10 +60,9 @@ $(document).ready(function() {
 		}
 	}
 
-	play_button.click(toggle_audio);
-	timeline.click(skip_time);
-	volume_slider.click(change_volume);
-	volume_button.click(toggle_sound);
+	play_button.on("click", toggle_audio());
+	volume_slider.on("click", change_volume());
+	volume_button.on("click", toggle_sound());
 });
 
 
