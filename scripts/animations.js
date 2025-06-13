@@ -5,7 +5,7 @@ $(document).ready(function() {
 	let playButton = $('.play-icon');
 	let volumeButton = $('.volume-icon');
 
-	let elapsed = $('.currrent');
+	let elapsed = $('.current');
 	let time = $('.length');
 
 	// toggle play/pause button
