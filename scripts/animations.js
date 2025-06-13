@@ -51,6 +51,10 @@ $(document).ready(function() {
 	volumeButton.click(function() {
 		toggleVolume();
 	});
+
+	audio.addEventListener('ended', function() {
+		playButton.attr({'src':'images/play%20icon%20white.svg', 'alt':'play icon'});
+	});
 });
 
 
