@@ -30,7 +30,7 @@ $(document).ready(function() {
 		}
 	};
 
-	// get duration of song
+	// calculate duration of song
 	function getDuration() {
 		let mins = Math.floor(audio.duration / 60);
 		let secs = Math.floor(audio.duration % 60);
@@ -39,6 +39,22 @@ $(document).ready(function() {
 		let seconds = `${secs < 10 ? `0${secs}` : `${secs}`}`;
 
 		return `${minutes}:${seconds}`;
+	}
+
+	// calculate time elapsed for song
+	function timeElapsed() {
+		let mins = Math.floor(audio.currentTime / 60);
+		let secs = Math.floor(audio.currentTime % 60);
+
+		let minutes = `${mins < 10 ? `0${mins}` : `${mins}`}`;
+		let seconds = `${secs < 10 ? `0${secs}` : `${secs}`}`;
+
+		return `${minutes}:${seconds}`;
+	}
+
+	// get time elapsed
+	function getTimeElapsed() {
+		elapsed.text(timeElapsed());
 	}
 
 
@@ -51,6 +67,8 @@ $(document).ready(function() {
 	volumeButton.click(function() {
 		toggleVolume();
 	});
+
+	KeyboardEvent;
 
 	audio.addEventListener('ended', function() {
 		playButton.attr({'src':'images/play%20icon%20white.svg', 'alt':'play icon'});
