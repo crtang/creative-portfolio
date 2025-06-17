@@ -5,6 +5,8 @@ $(document).ready(function() {
 	let playButton = $('.play-icon');
 	let volumeButton = $('.volume-icon');
 
+	let progress = $('.progress');
+
 	let elapsed = $('.current');
 	let time = $('.length');
 
@@ -40,6 +42,20 @@ $(document).ready(function() {
 
 		return `${minutes}:${seconds}`;
 	}
+
+	// set maximum value for song progress
+	function setSongProgress() {
+		progress.max = Math.floor(audio.duration);
+	}
+
+	if (audio.readyState > 0) {
+		setSongProgress();
+	} else {
+		audio.addEventListener('loadedmetadata', () => {
+			setSongProgress();
+		})
+	}
+
 
 	// calculate time elapsed for song
 	function timeElapsed() {
