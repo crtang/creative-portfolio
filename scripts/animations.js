@@ -52,6 +52,7 @@ $(document).ready(function() {
 		setSongProgress();
 	} else {
 		audio.addEventListener('loadedmetadata', () => {
+			time.text(getDuration());
 			setSongProgress();
 		})
 	}
