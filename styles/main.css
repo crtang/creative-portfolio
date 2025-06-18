@@ -427,16 +427,48 @@ button {
 }
 
 /* time slider */
-input[type="range"] {
+input.progress {
 	-webkit-appearance: none; /* Hides slider so that custom slider can be made */
-	grid-column-start: 1;
-	grid-column-end: 4;
+	appearance: none;
 	width: 75vw; /* Required for Firefox */
-	background: var(--color-2); /* Otherwise it'll be white in Chrome */
+	outline: none;
+	background: var(--color-5);
 }
 
-input[type="range"]:focus {
+input.progress:focus {
 	outline: none;
+}
+
+input.progress::-webkit-slider-runnable-track {
+	height: 100%;
+	background: var(--color-5); /* Otherwise it'll be white in Chrome */
+}
+
+input.progress::-moz-range-track {
+	height: 100%;
+	background: var(--color-5);
+}
+
+input.progress::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 4vh;
+	height: 100%;
+	border: none;
+	border-radius: 3px;
+	background: #a2344a;
+	cursor: pointer;
+}
+
+input.progress::-moz-range-thumb {
+	-moz-appearance: none;
+	appearance: none;
+	width: 4vh;
+	height: 100%;
+	border: none;
+	border-radius: 3px;
+	background: #a2344a;
+	cursor: pointer;
 }
 
 .audio-player-container {
@@ -448,7 +480,7 @@ input[type="range"]:focus {
 	align-items: center;
 	width: 75vw;
 	height: 25vw;
-	background: var(--color-4);
+	background-image: linear-gradient(#e2af50 0%, var(--color-4) 40%, var(--color-3) 85%);
 }
 
 /* audio controls */
