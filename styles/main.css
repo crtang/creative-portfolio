@@ -427,7 +427,7 @@ button {
 }
 
 /* time slider */
-.progress {
+input[type="range"] {
 	-webkit-appearance: none; /* Hides slider so that custom slider can be made */
 	grid-column-start: 1;
 	grid-column-end: 4;
@@ -435,51 +435,8 @@ button {
 	background: var(--color-2); /* Otherwise it'll be white in Chrome */
 }
 
-.progress::-webkit-slider-thumb, 
-.progress::-moz-range-thumb, 
-.progress::-ms-thumb {
-	-webkit-appearance: none;
-	margin-top: 0px; /* Required for Chrome */
-	border: none;
-	border-radius: 0;
-	height: 1em;
-	width: .5em;
-	background: var(--color-6);
-	cursor: pointer;
-}
-
-.progress:focus {
+input[type="range"]:focus {
 	outline: none;
-}
-
-.progress::-ms-track {
-	width: 75%;
-	cursor: pointer;
-	/* hides Firefox slider so custom styles can be added */
-	background: transparent;
-	border-color: transparent;
-	color: transparent;
-}
-
-.progress::-webkit-slider-runnable-track, 
-.progress::-moz-range-track, 
-.progress::-ms-track {
-	width: 75%;
-	height: .5em;
-	border: none;
-	border-radius: 5px;
-	background: var(--color-3);
-	cursor: pointer;
-}
-
-.progress:focus::-webkit-slider-runnable-track {
-	background: var(--color-3);
-}
-
-.progress::-ms-fill-lower {
-	border: none;
-	border-radius: 5px;
-	background: var(--color-3);
 }
 
 .audio-player-container {
@@ -656,7 +613,7 @@ button {
 		padding: 20%;
 	}
 
-	.progress {
+	input[type="range"] {
 		width: 50vh;
 	}
 
@@ -756,7 +713,7 @@ button {
 		padding: 20%;
 	}
 
-	.progress {
+	input[type="range"] {
 		width: 50vh;
 	}
 
