@@ -426,6 +426,62 @@ button {
 	cursor: pointer;
 }
 
+/* time slider */
+.progress {
+	-webkit-appearance: none; /* Hides slider so that custom slider can be made */
+	grid-column-start: 1;
+	grid-column-end: 4;
+	width: 75vw; /* Required for Firefox */
+	background: var(--color-2); /* Otherwise it'll be white in Chrome */
+}
+
+.progress::-webkit-slider-thumb, 
+.progress::-moz-range-thumb, 
+.progress::-ms-thumb {
+	-webkit-appearance: none;
+	margin-top: 0px; /* Required for Chrome */
+	border: none;
+	border-radius: 0;
+	height: 1em;
+	width: .5em;
+	background: var(--color-6);
+	cursor: pointer;
+}
+
+.progress:focus {
+	outline: none;
+}
+
+.progress::-ms-track {
+	width: 75%;
+	cursor: pointer;
+	/* hides Firefox slider so custom styles can be added */
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+
+.progress::-webkit-slider-runnable-track, 
+.progress::-moz-range-track, 
+.progress::-ms-track {
+	width: 75%;
+	height: .5em;
+	border: none;
+	border-radius: 5px;
+	background: var(--color-3);
+	cursor: pointer;
+}
+
+.progress:focus::-webkit-slider-runnable-track {
+	background: var(--color-3);
+}
+
+.progress::-ms-fill-lower {
+	border: none;
+	border-radius: 5px;
+	background: var(--color-3);
+}
+
 .audio-player-container {
 	box-sizing: border-box;
 	display: grid;
@@ -435,10 +491,10 @@ button {
 	align-items: center;
 	width: 75vw;
 	height: 25vw;
-	margin: 0 5%;
-	padding: 2.5%;
 	background: var(--color-4);
 }
+
+/* audio controls */
 
 .audio-icon {
 	margin-right: 5%;
@@ -456,16 +512,11 @@ button {
 	position: relative;
 	width: 100%;
 	height: 20%;
-	background: var(--color-3);
+	/*background: var(--color-3);*/
 	cursor: pointer;
 }
 
-.timeline .progress {
-	width: 0%;
-	height: 100%;
-	background: var(--color-2);
-	transition: 0.25s;
-}
+/* song duration displays */
 
 .current, .divider, .length {
 	display: inline;
@@ -605,6 +656,10 @@ button {
 		padding: 20%;
 	}
 
+	.progress {
+		width: 50vh;
+	}
+
 	.audio-player-container {
 		width: 50vh;
 		height: auto;
@@ -699,6 +754,10 @@ button {
 		height: 50vh;
 		margin: 0 25%;
 		padding: 20%;
+	}
+
+	.progress {
+		width: 50vh;
 	}
 
 	.audio-player-container {
