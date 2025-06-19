@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 	let playButton = $('.play-icon');
 	let volumeButton = $('.volume-icon');
+	let volumeSlider = $('.volume-slider');
 
 	let progress = $('.progress');
 
@@ -78,14 +79,21 @@ $(document).ready(function() {
 
 	// function calls
 	time.text(getDuration());
+
 	playButton.click(function() {
 		toggleAudio();
 	});
+
 	volumeButton.click(function() {
 		toggleVolume();
 	});
 
-	KeyboardEvent;
+	// show volume controls when hovering over volume button
+	volumeButton.hover(function() {
+		volumeSlider.removeClass('hide');
+	}, function() {
+		volumeSlider.addClass('hide');
+	});
 
 	audio.addEventListener('ended', function() {
 		playButton.attr({'src':'images/play%20icon%20white.svg', 'alt':'play icon'});

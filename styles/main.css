@@ -518,29 +518,18 @@ input.progress::-moz-range-thumb {
 	width: fit-content;
 }
 
+/* volume controls */
 .volume-container .volume-button {
 	align-items: center;
 }
 
-.volume-slider {
-	position: absolute;
-	top: 15px;
-	left: -3px;
-	width: 0;
+.hide {
+	display: none;
+}
+
+input.volume-slider {
+	width: 1vh;
 	height: 15px;
-	background: var(--color-4);
-	transition: 0.25s;
-	z-index: -1;
-}
-
-.volume-slider:hover {
-	width: 120px;
-	left: -123px;
-}
-
-.volume-percentage {
-	width: 75%;
-	height: 100%;
 	background: var(--color-3);
 }
 
