@@ -88,13 +88,6 @@ $(document).ready(function() {
 		toggleVolume();
 	});
 
-	// show volume controls when hovering over volume button
-	volumeButton.hover(function() {
-		volumeSlider.removeClass('hide');
-	}, function() {
-		volumeSlider.addClass('hide');
-	});
-
 	audio.addEventListener('ended', function() {
 		playButton.attr({'src':'images/play%20icon%20white.svg', 'alt':'play icon'});
 	});

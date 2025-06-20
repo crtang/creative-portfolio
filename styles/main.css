@@ -476,7 +476,7 @@ input.progress::-moz-range-thumb {
 	box-sizing: border-box;
 	display: grid;
 	grid-template-rows: 100%;
-	grid-template-columns: 15% 70% 15%;
+	grid-template-columns: 15% 20% 15% 50%;
 	justify-content: space-between;
 	align-items: center;
 	width: 75vw;
@@ -491,7 +491,7 @@ input.progress::-moz-range-thumb {
 }
 
 .audio-icon, .volume-button {
-	width: fit-content;
+	height: fit-content;
 }
 
 .current, .timeline {
@@ -502,7 +502,6 @@ input.progress::-moz-range-thumb {
 	position: relative;
 	width: 100%;
 	height: 20%;
-	/*background: var(--color-3);*/
 	cursor: pointer;
 }
 
@@ -519,16 +518,17 @@ input.progress::-moz-range-thumb {
 }
 
 /* volume controls */
-.volume-container .volume-button {
+.volume-container {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.volume-button {
 	align-items: center;
 }
 
-.hide {
-	display: none;
-}
-
 input.volume-slider {
-	width: 1vh;
+	width: 100%;
 	height: 15px;
 	background: var(--color-3);
 }
@@ -635,7 +635,7 @@ input.volume-slider {
 		padding: 20%;
 	}
 
-	input[type="range"] {
+	input.progress {
 		width: 50vh;
 	}
 
@@ -735,7 +735,7 @@ input.volume-slider {
 		padding: 20%;
 	}
 
-	input[type="range"] {
+	input.progress {
 		width: 50vh;
 	}
 
