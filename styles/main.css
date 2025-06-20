@@ -527,9 +527,46 @@ input.progress::-moz-range-thumb {
 }
 
 input.volume-slider {
-	width: 100%;
-	height: 15px;
-	background: var(--color-3);
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%; /* Required for Firefox */
+	height: .5em;
+	outline: none;
+	background: var(--color-5);
+}
+
+input.volume-slider:focus {
+	outline: none;
+}
+
+input.volume-slider::-webkit-slider-runnable-track {
+	background: var(--color-5); /* Otherwise it'll be white in Chrome */
+}
+
+input.volume-slider::-moz-range-track {
+	background: var(--color-5);
+}
+
+input.volume-slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 7.5px;
+	height: 100%;
+	border: none;
+	border-radius: 0;
+	background: #a2344a;
+	cursor: pointer;
+}
+
+input.volume-slider::-moz-range-thumb {
+	-moz-appearance: none;
+	appearance: none;
+	width: 7.5px;
+	height: 100%;
+	border: none;
+	border-radius: 0;
+	background: #a2344a;
+	cursor: pointer;
 }
 
 
