@@ -1,6 +1,9 @@
 $(document).ready(function() {
 	let composition = $('.music');
 	let audio = composition.get(0);
+	
+	const bufferedMusic = audio.buffered.end(audio.buffered.length - 1);
+	const seekableMusic = audio.seekable.end(audio.seekable.length - 1);
 
 	let playButton = $('.play-icon');
 	let volumeButton = $('.volume-icon');
@@ -71,11 +74,14 @@ $(document).ready(function() {
 	}
 
 	// get time elapsed
-	function getTimeElapsed() {
+	//function getTimeElapsed() {
+		//elapsed.text(timeElapsed());
+	//}
+	
+	// calculate time elapsed when time is sought
+	progress.on('input', function() {
 		elapsed.text(timeElapsed());
-	}
-
-
+	});
 
 	// function calls
 	time.text(getDuration());
