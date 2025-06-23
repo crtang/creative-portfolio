@@ -9,7 +9,7 @@ $(document).ready(function() {
 	let volumeButton = $('.volume-icon');
 	let volumeSlider = $('.volume-slider');
 
-	let progress = $('.progress');
+	const progress = $('.progress');
 
 	let elapsed = $('.current');
 	let time = $('.length');
@@ -72,16 +72,13 @@ $(document).ready(function() {
 
 		return `${minutes}:${seconds}`;
 	}
-
-	// get time elapsed
-	//function getTimeElapsed() {
-		//elapsed.text(timeElapsed());
-	//}
 	
 	// calculate time elapsed when time is sought
 	progress.on('input', function() {
 		elapsed.text(timeElapsed());
 	});
+
+
 
 	// function calls
 	time.text(getDuration());
