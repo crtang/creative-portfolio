@@ -5,9 +5,10 @@ $(document).ready(function() {
 	const bufferedMusic = audio.buffered.end(audio.buffered.length - 1);
 	const seekableMusic = audio.seekable.end(audio.seekable.length - 1);
 
+	let volumeSlider = $('.volume-slider');
+
 	let playButton = $('.play-icon');
 	let volumeButton = $('.volume-icon');
-	let volumeSlider = $('.volume-slider');
 
 	const progress = $('.progress');
 
@@ -72,6 +73,13 @@ $(document).ready(function() {
 
 		return `${minutes}:${seconds}`;
 	}
+
+	// keep timer running for song while playing
+	// setInterval????
+	// or while playing?
+	// calculate % of time elapsed - currentTime / duration
+	// set progress to same %
+	// call elapsed.text(timeElapsed());
 	
 	// calculate time elapsed when time is sought
 	progress.on('input', function() {
