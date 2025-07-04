@@ -15,12 +15,43 @@ $(document).ready(function() {
 	let elapsed = $('.current');
 	let time = $('.length');
 
+	// calculate time elapsed for song
+	function timeElapsed() {
+		let mins = Math.floor(audio.currentTime / 60);
+		let secs = Math.floor(audio.currentTime % 60);
+
+		let minutes = `${mins < 10 ? `0${mins}` : `${mins}`}`;
+		let seconds = `${secs < 10 ? `0${secs}` : `${secs}`}`;
+
+		return `${minutes}:${seconds}`;
+	}
+
+	// keep timer running for song while playing
+	// setInterval????
+	// or while playing?
+	// calculate % of time elapsed - currentTime / duration
+	// set progress to same %
+	// call elapsed.text(timeElapsed());
+	function progressMade() {
+		let musicPlayed = audio.currentTime / audio.duration;
+		progress.value = musicPlayed * 100;
+	}
+	
+	// calculate time elapsed when time is sought
+	progress.on('input', function() {
+		elapsed.text(timeElapsed());
+		// move song forward to time sought
+		audio.currentTime = progress.value / progress.max * audio.duration;
+	});
+
 	// toggle play/pause button
 	function toggleAudio() {
 		if (!audio.paused) {
+			clearInterval();
 			audio.pause();
 			playButton.attr({'src':'images/play%20icon%20white.svg', 'alt':'play icon'});
 		} else if (audio.paused) {
+			setInterval(progressMade(), 1000);
 			audio.play();
 			playButton.attr({'src':'images/pause%20icon%20white.svg', 'alt':'pause icon'});
 		}
@@ -61,30 +92,6 @@ $(document).ready(function() {
 			setSongProgress();
 		})
 	}
-
-
-	// calculate time elapsed for song
-	function timeElapsed() {
-		let mins = Math.floor(audio.currentTime / 60);
-		let secs = Math.floor(audio.currentTime % 60);
-
-		let minutes = `${mins < 10 ? `0${mins}` : `${mins}`}`;
-		let seconds = `${secs < 10 ? `0${secs}` : `${secs}`}`;
-
-		return `${minutes}:${seconds}`;
-	}
-
-	// keep timer running for song while playing
-	// setInterval????
-	// or while playing?
-	// calculate % of time elapsed - currentTime / duration
-	// set progress to same %
-	// call elapsed.text(timeElapsed());
-	
-	// calculate time elapsed when time is sought
-	progress.on('input', function() {
-		elapsed.text(timeElapsed());
-	});
 
 
 
