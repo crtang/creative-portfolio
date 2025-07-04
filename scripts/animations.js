@@ -2,8 +2,8 @@ $(document).ready(function() {
 	let composition = $('.music');
 	let audio = composition.get(0);
 	
-	const bufferedMusic = audio.buffered.end(audio.buffered.length - 1);
-	const seekableMusic = audio.seekable.end(audio.seekable.length - 1);
+	// const bufferedMusic = audio.buffered.end(audio.buffered.length - 1);
+	// const seekableMusic = audio.seekable.end(audio.seekable.length - 1);
 
 	let volumeSlider = $('.volume-slider');
 
@@ -40,9 +40,10 @@ $(document).ready(function() {
 	
 	// calculate time elapsed when time is sought
 	progress.on('input', function() {
-		elapsed.text(timeElapsed());
+		const newTime = progress.value / progress.max * audio.duration;
+		elapsed.text(newTime);
 		// move song forward to time sought
-		audio.currentTime = progress.value / progress.max * audio.duration;
+		audio.currentTime = newTime;
 	});
 
 	// toggle play/pause button
