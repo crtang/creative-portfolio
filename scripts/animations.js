@@ -35,6 +35,7 @@ $(document).ready(function() {
 	function progressMade() {
 		let musicPlayed = audio.currentTime / audio.duration;
 		progress.value = musicPlayed * 100;
+		elapsed.text(timeElapsed);
 	}
 	
 	// calculate time elapsed when time is sought
