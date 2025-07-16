@@ -15,16 +15,7 @@ $(document).ready(function() {
 	let elapsed = $('.current');
 	let time = $('.length');
 
-	// calculate time elapsed for song
-	function timeElapsed() {
-		let mins = Math.floor(audio.currentTime / 60);
-		let secs = Math.floor(audio.currentTime % 60);
-
-		let minutes = `${mins < 10 ? `0${mins}` : `${mins}`}`;
-		let seconds = `${secs < 10 ? `0${secs}` : `${secs}`}`;
-
-		return `${minutes}:${seconds}`;
-	}
+	
 
 	// keep timer running for song while playing
 	// setInterval????
@@ -37,14 +28,6 @@ $(document).ready(function() {
 		progress.value = musicPlayed * 100;
 		elapsed.text(timeElapsed);
 	}
-	
-	// calculate time elapsed when time is sought
-	progress.on('input', function() {
-		const newTime = progress.value / progress.max * audio.duration;
-		elapsed.text(newTime);
-		// move song forward to time sought
-		audio.currentTime = newTime;
-	});
 
 	// toggle play/pause button
 	function toggleAudio() {
@@ -94,6 +77,25 @@ $(document).ready(function() {
 			setSongProgress();
 		})
 	}
+	
+	// calculate time elapsed for song
+	function timeElapsed() {
+		let mins = Math.floor(audio.currentTime / 60);
+		let secs = Math.floor(audio.currentTime % 60);
+
+		let minutes = `${mins < 10 ? `0${mins}` : `${mins}`}`;
+		let seconds = `${secs < 10 ? `0${secs}` : `${secs}`}`;
+
+		return `${minutes}:${seconds}`;
+	}
+	
+	// calculate time elapsed when time is sought
+	progress.on('input', function() {
+		const newTime = progress.value / progress.max * audio.duration;
+		elapsed.text(newTime);
+		// move song forward to time sought
+		audio.currentTime = newTime;
+	});
 
 
 
