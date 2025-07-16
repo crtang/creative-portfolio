@@ -480,19 +480,16 @@ input.progress::-moz-range-thumb {
 	justify-content: space-between;
 	align-items: center;
 	width: 75vw;
-	height: 25vw;
+	height: 20vmin;
 	padding: 5%;
 	background-image: linear-gradient(#e2af50 0%, var(--color-4) 40%, var(--color-3) 85%);
 }
 
 /* audio controls */
 
-.audio-icon {
-	margin-right: 5%;
-}
-
 .audio-icon, .volume-button {
-	height: fit-content;
+	margin-right: 5%;
+	height: 60%;
 }
 
 .timeline {
@@ -520,7 +517,7 @@ input.progress::-moz-range-thumb {
 	flex-flow: row nowrap;
 }
 
-.volume-button {
+.volume-icon {
 	align-items: center;
 }
 
@@ -663,10 +660,6 @@ input.volume-slider::-moz-range-thumb {
 		width: 50vh;
 		height: 50vh;
 		margin: 0 25%;
-	}
-
-	#jqy, #lof {
-		padding: 20%;
 	}
 
 	input.progress {
