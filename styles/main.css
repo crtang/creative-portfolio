@@ -453,7 +453,7 @@ input.progress::-moz-range-track {
 input.progress::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
-	width: 20px;
+	width: 15px;
 	height: 100%;
 	border: none;
 	border-radius: 3px;
@@ -464,7 +464,7 @@ input.progress::-webkit-slider-thumb {
 input.progress::-moz-range-thumb {
 	-moz-appearance: none;
 	appearance: none;
-	width: 20px;
+	width: 15px;
 	height: 100%;
 	border: none;
 	border-radius: 3px;
