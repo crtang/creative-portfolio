@@ -495,10 +495,9 @@ input.progress::-moz-range-thumb {
 .timeline {
 	position: relative;
 	width: 100%;
-	height: 33%;
 	color: var(--color-2);
 	text-align: center;
-	font-size: .7em;
+	font-size: min(2vw, 1em, 2vh);
 	cursor: pointer;
 }
 
@@ -615,6 +614,7 @@ input.volume-slider::-moz-range-thumb {
 
 
 
+/* QUERIES */
 /* MEDIA QUERIES */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1199px) {
