@@ -88,13 +88,25 @@ $(document).ready(function() {
 
 		return `${minutes}:${seconds}`;
 	}
+
+	// calculated time
+	function timeSought(i) {
+		let mins = Math.floor(i / 60);
+		let secs = Math.floor(i % 60);
+
+		let minutes = `${mins < 10 ? `0${mins}` : `${mins}`}`;
+		let seconds = `${secs < 10 ? `0${secs}` : `${secs}`}`;
+
+		return `${minutes}:${seconds}`;
+	}
 	
 	// calculate time elapsed when time is sought
-	progress.on('input', function() {
-		const newTime = progress.value / progress.max * audio.duration;
-		elapsed.text(newTime);
+	progress.on('click', function(e) {
+		const progressWidth = parseFloat(window.getComputedStyle(progress[0]).width);
+		const timeToSeek = parseFloat(parseFloat(e.offsetX / progressWidth) * audio.duration).toFixed(0);
+		elapsed.text(timeSought(timeToSeek));
 		// move song forward to time sought
-		audio.currentTime = newTime;
+		audio.currentTime = timeToSeek;
 	});
 
 
