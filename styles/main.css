@@ -495,9 +495,10 @@ input.progress::-moz-range-thumb {
 .timeline {
 	position: relative;
 	width: 100%;
+	height: 33%;
 	color: var(--color-2);
 	text-align: center;
-	font-size: 2vmin;
+	font-size: .7em;
 	cursor: pointer;
 }
 
