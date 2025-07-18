@@ -442,51 +442,6 @@ button {
 	transition: .125s;
 }
 
-input.progress {
-	-webkit-appearance: none; /* Hides slider so that custom slider can be made */
-	appearance: none;
-	width: 75vw; /* Required for Firefox */
-	height: 1.25vh;
-	outline: none;
-	background: var(--color-8);
-}
-
-input.progress:focus {
-	outline: none;
-}
-
-input.progress::-webkit-slider-runnable-track {
-	height: 100%;
-	background: var(--color-8); /* Otherwise it'll be white in Chrome */
-}
-
-input.progress::-moz-range-track {
-	height: 100%;
-	background: var(--color-8);
-}
-
-input.progress::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 15px;
-	height: 100%;
-	border: none;
-	border-radius: 3px;
-	background: var(--color-7);
-	cursor: pointer;
-}
-
-input.progress::-moz-range-thumb {
-	-moz-appearance: none;
-	appearance: none;
-	width: 15px;
-	height: 100%;
-	border: none;
-	border-radius: 3px;
-	background: var(--color-7);
-	cursor: pointer;
-}
-
 .audio-player-container {
 	box-sizing: border-box;
 	display: grid;
