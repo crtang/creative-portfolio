@@ -491,6 +491,20 @@ button {
 	align-items: center;
 }
 
+.volume-slider {
+	width: 100%;
+	height: .5em;
+	background: var(--color-8);
+	cursor: grabbing;
+}
+
+.volume-set {
+	width: 50%;
+	height: 100%;
+	background: var(--color-7);
+	cursor: grabbing;
+}
+
 input.volume-slider {
 	-webkit-appearance: none;
 	appearance: none;

@@ -6,6 +6,7 @@ $(document).ready(function() {
 	// const seekableMusic = audio.seekable.end(audio.seekable.length - 1);
 
 	let volumeSlider = $('.volume-slider');
+	let volumeSet = $('.volume-set');
 
 	let playButton = $('.play-icon');
 	let volumeButton = $('.volume-icon');
@@ -18,18 +19,8 @@ $(document).ready(function() {
 
 	
 
-	// keep timer running for song while playing
-	// setInterval????
-	// or while playing?
-	// calculate % of time elapsed - currentTime / duration
-	// set progress to same %
-	// call elapsed.text(timeElapsed());
-	function progressMade() {
-		let musicPlayed = audio.currentTime / audio.duration;
-		songProgress.value = musicPlayed * 100;
-		elapsed.text(timeElapsed);
-	}
-
+	volumeSet.width((audio.volume * 100).toString() + "%");
+	
 	// toggle play/pause button
 	function toggleAudio() {
 		if (!audio.paused) {
@@ -116,6 +107,16 @@ $(document).ready(function() {
 
 	// function calls
 	time.text(getDuration());
+
+	volumeSlider.click(function(e) {
+		const volumeMax = parseFloat(window.getComputedStyle(volumeSlider[0]).width);
+		const newVolume = parseFloat(e.offsetX);
+
+		volumeSet.width(parseInt(newVolume / volumeMax * 100).toString() + "%");
+		audio.volume = newVolume / volumeMax;
+
+		console.log(audio.volume);
+	});
 
 	setInterval(() => {
 		songProgress.width((audio.currentTime / audio.duration * 100).toString() + "%");
