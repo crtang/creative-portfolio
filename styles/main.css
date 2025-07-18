@@ -127,12 +127,15 @@ a {
 }
 
 nav a:hover {
+	border-radius: 5px;
+	padding: 5px 10px;
+	background: var(--color-5);
 	color: var(--color-2);
 }
 
 a:hover {
-	font-weight: bold;
 	text-decoration: underline;
+	text-decoration-style: dotted;
 }
 
 nav ul li {
