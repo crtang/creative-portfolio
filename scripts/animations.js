@@ -46,10 +46,10 @@ $(document).ready(function() {
 	function toggleVolume() {
 		if (!audio.muted) {
 			audio.muted = true;
-			volumeButton.attr({'src':'images/volume-up.svg', 'alt':'volume on icon'});
+			volumeButton.attr({'src':'images/volume-mute.svg', 'alt':'volume on icon'});
 		} else {
 			audio.muted = false;
-			volumeButton.attr({'src':'images/volume-mute.svg', 'alt':'volume off icon'});
+			volumeButton.attr({'src':'images/volume-up.svg', 'alt':'volume off icon'});
 		}
 	};
 
@@ -116,6 +116,10 @@ $(document).ready(function() {
 
 	// function calls
 	time.text(getDuration());
+
+	setInterval(() => {
+		songProgress.width((audio.currentTime / audio.duration * 100).toString() + "%");
+	}, 500);
 
 	playButton.click(function() {
 		toggleAudio();
