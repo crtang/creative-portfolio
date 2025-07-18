@@ -1,4 +1,18 @@
 $(document).ready(function() {
+	function isSafari() {
+		const userAgent = navigator.userAgent;
+		const isSafariBrowser = userAgent.includes("Safari");
+
+		return isSafariBrowser;
+	}
+
+	if (!isSafari()) {
+		$('.audio-icon').addClass('not-safari-audio-icons');
+		$('.volume-button').addClass('not-safari-audio-icons');
+	}
+
+
+
 	let composition = $('.music');
 	let audio = composition.get(0);
 	

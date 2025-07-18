@@ -459,6 +459,9 @@ button {
 
 .audio-icon, .volume-button {
 	margin-right: 5%;
+}
+
+.not-safari-audio-icons {
 	height: 60%;
 }
 
