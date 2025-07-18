@@ -162,7 +162,7 @@ nav ul li {
 	box-sizing: border-box;
 	width: auto;
 	padding: 2% 5%;
-	background: var(--color-2);
+	background: rgba(255, 255, 255, 0.75);
 	font-size: 5vh;
 	text-align: center;
 }
