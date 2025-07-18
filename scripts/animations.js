@@ -133,6 +133,7 @@ $(document).ready(function() {
 	});
 
 	setInterval(() => {
+		elapsed.text(timeElapsed());
 		songProgress.width((audio.currentTime / audio.duration * 100).toString() + "%");
 	}, 500);
 
