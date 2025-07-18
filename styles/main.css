@@ -505,49 +505,6 @@ button {
 	cursor: grabbing;
 }
 
-input.volume-slider {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 100%; /* Required for Firefox */
-	height: .5em;
-	outline: none;
-	background: var(--color-5);
-}
-
-input.volume-slider:focus {
-	outline: none;
-}
-
-input.volume-slider::-webkit-slider-runnable-track {
-	background: var(--color-5); /* Otherwise it'll be white in Chrome */
-}
-
-input.volume-slider::-moz-range-track {
-	background: var(--color-5);
-}
-
-input.volume-slider::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 7.5px;
-	height: 100%;
-	border: none;
-	border-radius: 0;
-	background: #a2344a;
-	cursor: pointer;
-}
-
-input.volume-slider::-moz-range-thumb {
-	-moz-appearance: none;
-	appearance: none;
-	width: 7.5px;
-	height: 100%;
-	border: none;
-	border-radius: 0;
-	background: #a2344a;
-	cursor: pointer;
-}
-
 
 /* MUSIC PLAYER PAGES */
 .song-cover {
@@ -651,10 +608,6 @@ input.volume-slider::-moz-range-thumb {
 		width: 50vh;
 	}
 
-	input.progress {
-		width: 50vh;
-	}
-
 	.audio-player-container {
 		width: 50vh;
 		height: auto;
@@ -752,10 +705,6 @@ input.volume-slider::-moz-range-thumb {
 	}
 
 	.song-time {
-		width: 50vh;
-	}
-
-	input.progress {
 		width: 50vh;
 	}
 
