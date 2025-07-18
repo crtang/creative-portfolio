@@ -58,6 +58,25 @@ $(document).ready(function() {
 		}
 	};
 
+	$(document).keydown(function(event) {
+		if (event.key == " ") {
+			toggleAudio();
+			event.preventDefault();
+		}
+
+		if (event.key == "s" || event.key == "S") {
+			audio.pause();
+			clearInterval;
+			audio.currentTime = 0;
+			event.preventDefault();
+		}
+
+		if (event.key == "m" || event.key == "M") {
+			toggleVolume();
+			event.preventDefault;
+		}
+	});
+
 	// calculate duration of song
 	function getDuration() {
 		let mins = Math.floor(audio.duration / 60);
