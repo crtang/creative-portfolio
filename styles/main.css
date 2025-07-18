@@ -25,6 +25,8 @@
 	--color-4: #ab7a1c;
 	--color-5: #28292a;
 	--color-6: #828282;
+	--color-7: #a2344a;
+	--color-8: #4f1903;
 }
 
 
@@ -427,13 +429,26 @@ button {
 }
 
 /* time slider */
+.song-time {
+	width: 75vw;
+	height: 1.25vh;
+	background: var(--color-8);
+}
+
+.song-progress {
+	width: 0%;
+	height: 100%;
+	background: var(--color-7);
+	transition: .125s;
+}
+
 input.progress {
 	-webkit-appearance: none; /* Hides slider so that custom slider can be made */
 	appearance: none;
 	width: 75vw; /* Required for Firefox */
 	height: 1.25vh;
 	outline: none;
-	background: var(--color-5);
+	background: var(--color-8);
 }
 
 input.progress:focus {
@@ -442,12 +457,12 @@ input.progress:focus {
 
 input.progress::-webkit-slider-runnable-track {
 	height: 100%;
-	background: var(--color-5); /* Otherwise it'll be white in Chrome */
+	background: var(--color-8); /* Otherwise it'll be white in Chrome */
 }
 
 input.progress::-moz-range-track {
 	height: 100%;
-	background: var(--color-5);
+	background: var(--color-8);
 }
 
 input.progress::-webkit-slider-thumb {
@@ -457,7 +472,7 @@ input.progress::-webkit-slider-thumb {
 	height: 100%;
 	border: none;
 	border-radius: 3px;
-	background: #a2344a;
+	background: var(--color-7);
 	cursor: pointer;
 }
 
@@ -468,7 +483,7 @@ input.progress::-moz-range-thumb {
 	height: 100%;
 	border: none;
 	border-radius: 3px;
-	background: #a2344a;
+	background: var(--color-7);
 	cursor: pointer;
 }
 
@@ -663,6 +678,10 @@ input.volume-slider::-moz-range-thumb {
 		margin: 0 25%;
 	}
 
+	.song-time {
+		width: 50vh;
+	}
+
 	input.progress {
 		width: 50vh;
 	}
@@ -761,6 +780,10 @@ input.volume-slider::-moz-range-thumb {
 		height: 50vh;
 		margin: 0 25%;
 		padding: 20%;
+	}
+
+	.song-time {
+		width: 50vh;
 	}
 
 	input.progress {

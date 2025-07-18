@@ -10,7 +10,8 @@ $(document).ready(function() {
 	let playButton = $('.play-icon');
 	let volumeButton = $('.volume-icon');
 
-	const progress = $('.progress');
+	const songTime = $('.song-time');
+	const songProgress = $('.song-progress');
 
 	let elapsed = $('.current');
 	let time = $('.length');
@@ -25,7 +26,7 @@ $(document).ready(function() {
 	// call elapsed.text(timeElapsed());
 	function progressMade() {
 		let musicPlayed = audio.currentTime / audio.duration;
-		progress.value = musicPlayed * 100;
+		songProgress.value = musicPlayed * 100;
 		elapsed.text(timeElapsed);
 	}
 
@@ -36,7 +37,6 @@ $(document).ready(function() {
 			audio.pause();
 			playButton.attr({'src':'images/play%20icon%20white.svg', 'alt':'play icon'});
 		} else if (audio.paused) {
-			setInterval(progressMade(), 1000);
 			audio.play();
 			playButton.attr({'src':'images/pause%20icon%20white.svg', 'alt':'pause icon'});
 		}
@@ -66,7 +66,7 @@ $(document).ready(function() {
 
 	// set maximum value for song progress
 	function setSongProgress() {
-		progress.max = Math.floor(audio.duration);
+		songProgress.max = Math.floor(audio.duration);
 	}
 
 	if (audio.readyState > 0) {
@@ -101,9 +101,12 @@ $(document).ready(function() {
 	}
 	
 	// calculate time elapsed when time is sought
-	progress.on('click', function(e) {
-		const progressWidth = parseFloat(window.getComputedStyle(progress[0]).width);
-		const timeToSeek = parseFloat(parseFloat(e.offsetX / progressWidth) * audio.duration).toFixed(0);
+	songTime.on('click', function(e) {
+		const timeWidth = parseFloat(window.getComputedStyle(songTime[0]).width);
+		const progressWidth = parseFloat(e.offsetX);
+		songProgress.width(parseInt(progressWidth / timeWidth * 100).toString() + "%");
+
+		const timeToSeek = parseFloat(parseFloat(e.offsetX / timeWidth) * audio.duration).toFixed(0);
 		elapsed.text(timeSought(timeToSeek));
 		// move song forward to time sought
 		audio.currentTime = timeToSeek;
